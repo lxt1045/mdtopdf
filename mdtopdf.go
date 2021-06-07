@@ -2,16 +2,16 @@ package mdtopdf
 
 import (
 	"io"
+	"io/ioutil"
 
 	"github.com/jung-kurt/gofpdf"
-
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
 )
 
 // Convert your Markdown to PDF
 func Convert(r io.Reader, w io.Writer) error {
-	md, err := io.ReadAll(r)
+	md, err := ioutil.ReadAll(r)
 	if err != nil {
 		return err
 	}
@@ -39,7 +39,3 @@ func Convert(r io.Reader, w io.Writer) error {
 
 	return nil
 }
-
-
-
-
